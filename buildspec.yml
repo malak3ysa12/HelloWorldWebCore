@@ -5,7 +5,7 @@ phases:
     commands:
       - dotnet test ./src/HelloTests/HelloTests.csproj
       - dotnet publish -c release -o ./build_output ./src/HelloWorldWebCore/HelloWorldWebCore.csproj
-      - msbuild ./build_output ./src/HelloWorldWebCore/HelloWorldWebCore.csproj /t:Package /p:DeployIisAppPath="Default Web Site"
+      - msbuild -o ./build_output ./src/HelloWorldWebCore/HelloWorldWebCore.csproj /t:Package /p:DeployIisAppPath="Default Web Site"
 artifacts:
   files:
     - src/HelloWorldWebCore/build_output/*
