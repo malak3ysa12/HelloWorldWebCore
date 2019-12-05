@@ -3,9 +3,9 @@ version: 0.2
 phases:
   build:
     commands:
-      - dotnet test ./src/HelloTests/HelloTests.csproj
-      - dotnet publish -c release -o ./build_output ./src/HelloWorldWebCore/HelloWorldWebCore.csproj
-      - msbuild  ./src/HelloWorldWebCore/HelloWorldWebCore.csproj /t:Package /p:DeployIisAppPath="Default Web Site"
+     - msbuild ./src/HelloWorldWebCore.sln /p:Configuration=Release /p:Platform="Any CPU" /t:Package /p:DeployIisAppPath="Default Web Site"
+     - dotnet test ./src/HelloTests/HelloTests.csproj
+     - dotnet publish -c release -o ./build_output ./src/HelloWorldWebCore/HelloWorldWebCore.csproj
 artifacts:
   files:
     - src/HelloWorldWebCore/build_output/*
