@@ -1,4 +1,4 @@
-- task: DockerCompose@0
+- task: Dockerbuild
   inputs:
     containerregistrytype: 'Azure Container Registry'
     azureSubscription: 'Free Trial (5c3e183b-d791-4374-9c47-67ced35226c5)'
