@@ -3,5 +3,5 @@
     containerregistrytype: 'Azure Container Registry'
     azureSubscription: 'Free Trial (5c3e183b-d791-4374-9c47-67ced35226c5)'
     azureContainerRegistry: '{"loginServer":"devopscontreg1.azurecr.io", "id" : "/subscriptions/5c3e183b-d791-4374-9c47-67ced35226c5/resourceGroups/test2/providers/Microsoft.ContainerRegistry/registries/devopscontreg1"}'
-    dockerComposeFile: '**/docker-compose.yml'
-    action: 'Run a Docker Compose command'
+    dockerComposeFile: 'Dockerfile'
+    action: 'Build services'
