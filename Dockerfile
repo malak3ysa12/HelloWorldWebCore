@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:sdk 
+FROM golang:1.11-alpine AS build
 WORKDIR /app
 
 COPY *.csproj ./
