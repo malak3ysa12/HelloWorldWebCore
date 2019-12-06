@@ -1,7 +1,3 @@
-FROM ubuntu:12.04
-
-MAINTAINER Kimbro Staken version: 0.1
-
 FROM microsoft/dotnet:sdk 
 WORKDIR /app
 
