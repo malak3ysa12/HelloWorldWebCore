@@ -1,14 +1,11 @@
-FROM golang:1.11-alpine AS build
-WORKDIR /app
+  
+# escape=`
+FROM mcr.microsoft.com/windows/servercore:1803
 
-COPY *.csproj ./
-RUN dotnet restore
+RUN powershell -Command `
+    Add-WindowsFeature Web-Server; `
+    Invoke-WebRequest -UseBasicParsing -Uri "https://dotnetbinaries.blob.core.windows.net/servicemonitor/2.0.1.6/ServiceMonitor.exe" -OutFile "C:\ServiceMonitor.exe"
 
-COPY . ./
-RUN dotnet publish -c Release -o publishdir
+EXPOSE 80
 
-FROM microsoft/dotnet:aspnetcore-runtime AS runtime
-EXPOSE 5555
-WORKDIR /app
-COPY --from=build /app/publishdir .
-ENTRYPOINT ["dotnet", "WebAppContainer.dll"]
+ENTRYPOINT ["C:\\ServiceMonitor.exe", "w3svc"]
