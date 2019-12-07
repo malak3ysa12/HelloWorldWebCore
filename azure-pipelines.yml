@@ -21,5 +21,5 @@ steps:
     containerregistrytype: 'Azure Container Registry'
     azureSubscription: 'Free Trial (5c3e183b-d791-4374-9c47-67ced35226c5)'
     azureContainerRegistry: '{"loginServer":"wwwrtrtyutui.azurecr.io", "id" : "/subscriptions/5c3e183b-d791-4374-9c47-67ced35226c5/resourceGroups/test2/providers/Microsoft.ContainerRegistry/registries/wwwrtrtyutui"}'
-    dockerComposeFile: 'DockerFile'
+
     action: 'Build services'
