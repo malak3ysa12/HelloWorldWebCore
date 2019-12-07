@@ -1,6 +1,7 @@
   
 # escape=`
 FROM mcr.microsoft.com/windows/servercore:1803
+docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
 RUN powershell -Command `
     Add-WindowsFeature Web-Server; `
